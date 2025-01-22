@@ -14,15 +14,39 @@
         }
 
         .hero {
-            background: url('hero-banner.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #f5f5f5;
-        }
+    position: relative;
+    background: url('hero-banner.jpg') no-repeat center center/cover;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f5f5f5;
+    overflow: hidden;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 195, 0.9), rgba(0, 255, 195, 0.05));
+    animation: glow 1.5s infinite alternate;
+    pointer-events: none; /* Prevent overlay from blocking content */
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(1.05);
+    }
+}
 
         .hero h1 {
             font-size: 4rem;
@@ -49,7 +73,7 @@
         }
 
         .about img {
-            max-width: 100%;
+            max-width: 40%;
             height: auto;
             border-radius: 8px;
             margin-top: 1rem;
@@ -89,35 +113,70 @@
 </head>
 <body>
     <div class="hero">
+        <div class="overlay"></div>
         <h1>Energy AI LTD</h1>
         <p>Pioneering the future of AI and cryptocurrency</p>
     </div>
 
     <div class="container">
-        <section class="about">
-            <h2>About Us</h2>
-            <p>Energy AI LTD is a cutting-edge company specializing in AI-driven technologies and blockchain innovation. Our mission is to revolutionize industries through intelligent solutions and sustainable cryptocurrency initiatives.</p>
-            <img src="path-to-your-about-image.jpg" alt="About Us Image">
-        </section>
-
         <section class="features">
-            <h2>Features</h2>
             <div class="feature">
-                <img src="path-to-ai-integration-icon.png" alt="AI Integration Icon">
+                <img src="ai-integration-icon.png" alt="AI Integration Icon">
                 <h3>AI Integration</h3>
                 <p>Leverage the power of artificial intelligence for enhanced decision-making and automation.</p>
             </div>
             <div class="feature">
-                <img src="path-to-blockchain-security-icon.png" alt="Blockchain Security Icon">
+                <img src="blockchain-security-icon.png" alt="Blockchain Security Icon">
                 <h3>Blockchain Security</h3>
                 <p>Our AI coin is built on a robust and secure blockchain platform, ensuring transparency and trust.</p>
             </div>
             <div class="feature">
-                <img src="path-to-eco-friendly-icon.png" alt="Eco-Friendly Icon">
+                <img src="eco-friendly-icon.png" alt="Eco-Friendly Icon">
                 <h3>Eco-Friendly</h3>
                 <p>Committed to sustainability, we utilize energy-efficient technologies for a greener future.</p>
             </div>
         </section>
+
+        <section id="about-us">
+            <div>
+              <h2>About Us</h2>
+              <p>
+                Welcome to <strong>Energy AI LTD</strong>, where cutting-edge technology meets real-world solutions. 
+                Our mission is to harness the power of blockchain and artificial intelligence (AI) to build a more transparent, 
+                efficient, and sustainable future for everyone.
+              </p>
+              <h3>Why Blockchain?</h3>
+              <p>
+                Blockchain technology is at the heart of our platform. Its decentralized nature ensures transparency, 
+                trust, and security in every transaction. By leveraging blockchain, we eliminate the need for intermediaries, 
+                reducing costs and increasing efficiency for businesses and individuals alike. 
+                Whether it's financial transactions, supply chain management, or digital identity, 
+                our blockchain solutions are designed to empower users and foster innovation.
+              </p>
+              <h3>The Power of AI</h3>
+              <p>
+                Artificial intelligence enhances our capabilities by enabling smarter decision-making, faster processes, 
+                and more personalized experiences. From predictive analytics to intelligent automation, 
+                AI helps us optimize operations, analyze complex datasets, and deliver cutting-edge solutions 
+                tailored to the unique needs of our users.
+              </p>
+              <h3>Committed to Sustainability</h3>
+              <p>
+                At <strong>Energy AI LTD</strong>, we believe in building technology that benefits the planet. 
+                Our blockchain solutions are designed to minimize energy consumption by adopting eco-friendly consensus 
+                mechanisms such as Proof-of-Stake (PoS). Additionally, we actively explore AI-driven innovations to 
+                optimize resource allocation, reduce waste, and enhance the efficiency of green initiatives. 
+                Together, we aim to create a sustainable ecosystem where technology and environmental stewardship go hand in hand.
+              </p>
+              <h3>Join Us in Shaping the Future</h3>
+              <p>
+                We are more than just a technology company; we are a community of innovators, creators, and changemakers 
+                committed to a brighter tomorrow. Whether you're a business looking for transformative solutions or an 
+                individual passionate about cutting-edge technology, we invite you to join us on this exciting journey.
+              </p>
+            </div>
+          </section>
+          
     </div>
 
     <footer>
